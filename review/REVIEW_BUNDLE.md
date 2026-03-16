@@ -23,6 +23,15 @@
 | transfer takeaway | anonymous path statistics is the best immediate AML carry-back | evidence-informed proposal | `docs/AML_PROBE_SPEC.md` |
 | caveat section | not a faithful transformer claim and not AML production validation | hard boundary | `docs/PAPER_REPORT_PACK.md` |
 
+## Transfer Implementation Plan
+
+| component | keep/drop/defer | AML form | required adapter | artifact target | success metric | first execution step |
+|---|---|---|---|---|---|---|
+| anonymous path statistics | keep | per-account structural features | directed AML graph adapter plus `node_id` mapping | `anon_path_features.csv`, `anon_path_features.pt`, `metadata_manifest.json` | >=80% coverage and >=3 low-correlation features | wire `probe_anon_path_stats_v1` |
+| random-walk tokenizer | keep | reusable directed walk generator | direction-aware AML walk policy | tokenizer walk dump plus manifest | stable reproducible walk export on AML-shaped graph | adapt tokenizer input contract |
+| pattern frequency statistics | defer | secondary feature family | reuse tokenizer/export path after first-step success | `pattern_freq_features.csv`, `pattern_freq_features.pt` | novelty gate must pass after anonymous-path baseline | run only after first-step success |
+| pattern attention | drop | none in this round | would require model-side port and blocked mechanism confidence | none | not worth current round effort | do not implement |
+
 ## Faithful Reproduction Completion Plan
 
 | item | current_state | blocker | completion_condition | next_action |
@@ -75,6 +84,7 @@
 | ticket_id | title | status |
 |---|---|---|
 | TKT-901 | Professor report pack finalization | REVIEW_READY |
+| TKT-902 | Transfer implementation proposal freeze | REVIEW_READY |
 | TKT-801 | GPM Round Contract Correction | REVIEW_READY |
 | TKT-802 | Faithful Reproduction Completion Plan | REVIEW_READY |
 | TKT-803 | Paper-Facing Mechanism Summary | REVIEW_READY |
@@ -88,6 +98,7 @@
 | ticket_id | owner | session_id |
 |---|---|---|
 | TKT-901 | sisyphus | sisyphus-ralph-005 |
+| TKT-902 | sisyphus | sisyphus-ralph-005 |
 | TKT-802 | sisyphus | sisyphus-ralph-004 |
 | TKT-803 | sisyphus | sisyphus-ralph-004 |
 | TKT-804 | sisyphus | sisyphus-ralph-004 |
@@ -98,7 +109,7 @@
 ## Open / Stale Ticket Check
 
 - `OPEN`: none
-- `UNCLAIMED`: `TKT-902`, `TKT-903`, `TKT-904`, `TKT-000`
+- `UNCLAIMED`: `TKT-903`, `TKT-904`, `TKT-000`
 - `STALE_CLAIM`: none
 - existing blocked evidence tickets: `TKT-602`, `TKT-603` remain blocked but are not open/stale
 
@@ -110,6 +121,7 @@
 ## Worker Ticket Snapshots
 
 - `TKT-901`: professor-facing pack is now presentation-ready with clear evidence-level boundaries.
+- `TKT-902`: transfer path is frozen as a concrete feature-first implementation plan with explicit defer/drop calls.
 - `TKT-802`: faithful completion plan converted blocker package into an executable decision table.
 - `TKT-803`: professor-facing report pack now uses current reduced-config artifact values and explicit report boundaries.
 - `TKT-804`: AML component ordering is hard-ranked with keep/defer decisions.
