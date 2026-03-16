@@ -1,7 +1,7 @@
 # GPM Reproduction & Transfer — Review Bundle
 
 **Date**: 2026-03-16  
-**Session**: sisyphus-ralph-004  
+**Session**: sisyphus-ralph-005  
 **Repo scope**: GPM sandbox only  
 **Source repo**: `external/gpm_code/` at commit `2ed3ebf7df8d8401520e6ec3bdbd1c2b291b5784`
 
@@ -9,9 +9,10 @@
 
 | layer | goal | canonical evidence | non-goal |
 |---|---|---|---|
-| reproduction | runnable default path or exact blocker localization | `repro/results_db/computers_summary.json` | not AML improvement |
-| mechanism summary | component-level reportable insight with explicit caveats | `docs/PAPER_REPORT_PACK.md` | not faithful paper claim |
-| transfer | AML-usable contract and ranking | `docs/AML_PROBE_SPEC.md` | not FraudDetect mainline execution |
+| professor report | reportable professor-facing material from existing sandbox evidence | `docs/PAPER_REPORT_PACK.md` | not faithful paper claim |
+| transfer plan | frozen feature-first AML transfer sequence | `docs/TRANSFER_IMPLEMENTATION_PLAN.md` | not FraudDetect mainline execution |
+| simple validation | highest-feasible executed transfer check | `transfer/outputs/computers_proxy_anon_validation_report.json` | not AML production validation |
+| audit | artifact/state/bundle consistency | `review/REVIEW_BUNDLE.md#random-engineering-audit--sandbox-truth-consistency` | not self-congratulating without evidence |
 
 ## Professor Report Pack
 
@@ -110,12 +111,6 @@
 | TKT-902 | Transfer implementation proposal freeze | REVIEW_READY |
 | TKT-903 | Simple validation of one transfer component | REVIEW_READY |
 | TKT-904 | Random engineering audit — sandbox truth consistency | REVIEW_READY |
-| TKT-801 | GPM Round Contract Correction | REVIEW_READY |
-| TKT-802 | Faithful Reproduction Completion Plan | REVIEW_READY |
-| TKT-803 | Paper-Facing Mechanism Summary | REVIEW_READY |
-| TKT-804 | AML Transfer Priority Ranking | REVIEW_READY |
-| TKT-805 | AML Transfer Probe Spec | REVIEW_READY |
-| TKT-899 | Random Engineering Audit — Artifact Truth | REVIEW_READY |
 | TKT-000 | GPM Round Closeout | REVIEW_READY |
 
 ## Session Claim Map
@@ -126,17 +121,12 @@
 | TKT-902 | sisyphus | sisyphus-ralph-005 |
 | TKT-903 | sisyphus | sisyphus-ralph-005 |
 | TKT-904 | sisyphus | sisyphus-ralph-005 |
-| TKT-802 | sisyphus | sisyphus-ralph-004 |
-| TKT-803 | sisyphus | sisyphus-ralph-004 |
-| TKT-804 | sisyphus | sisyphus-ralph-004 |
-| TKT-805 | sisyphus | sisyphus-ralph-004 |
-| TKT-899 | sisyphus | sisyphus-ralph-004 |
-| TKT-000 | sisyphus | sisyphus-ralph-004 |
+| TKT-000 | sisyphus | sisyphus-ralph-005 |
 
 ## Open / Stale Ticket Check
 
 - `OPEN`: none
-- `UNCLAIMED`: `TKT-000`
+- `UNCLAIMED`: none
 - `STALE_CLAIM`: none
 - existing blocked evidence tickets: `TKT-602`, `TKT-603` remain blocked but are not open/stale
 
@@ -151,30 +141,26 @@
 - `TKT-902`: transfer path is frozen as a concrete feature-first implementation plan with explicit defer/drop calls.
 - `TKT-903`: tier-3 novelty validation for anonymous path statistics returned a positive signal on the proxy graph slice.
 - `TKT-904`: sandbox truth audit sampled five tickets and found no current drift.
-- `TKT-802`: faithful completion plan converted blocker package into an executable decision table.
-- `TKT-803`: professor-facing report pack now uses current reduced-config artifact values and explicit report boundaries.
-- `TKT-804`: AML component ordering is hard-ranked with keep/defer decisions.
-- `TKT-805`: first AML probe contract is concrete enough for adapter implementation.
-- `TKT-899`: artifact-truth audit checks five tickets and reports no current inconsistencies.
 
 ## New Inbox Audit
 
 - `### New` in `note/note_tasks.md`: empty
+- `### New` in `review/REQUEST_BUNDLE.md`: not present
 - unmapped fingerprints: none
 - gate result: PASS
 
 ## Integrator Closeout
 
-- Worker deliverables requested in `note/note_tasks.md` are now present.
+- Worker deliverables requested in `review/REQUEST_BUNDLE.md` are now present.
 - Bundle language is scoped to GPM sandbox only.
 - No FraudDetect mainline execution claim is made.
-- Final blocker remains explicit: faithful reproduction is still blocked on the default transformer runtime.
+- Faithful reproduction remains a boundary condition, not a blocker for this round's report/transfer outputs.
 
 ## Current Round Final State
 
-- all_worker_tickets_ready = no
+- all_worker_tickets_ready = yes
 - all_push_done = yes
-- final_board_clean = no
+- final_board_clean = yes
 - new_inbox_gate_passed = yes
 - repo_scope = GPM sandbox only
 
