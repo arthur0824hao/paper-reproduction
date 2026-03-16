@@ -1,0 +1,27 @@
+{
+  "ticket_id": "TKT-000",
+  "title": "GPM Round Closeout",
+  "type": "integrator",
+  "priority": "P0",
+  "status": "REVIEW_READY",
+  "owner": "sisyphus",
+  "owner_session_id": "sisyphus-ralph-004",
+  "round": "r3-gpm-sandbox",
+  "created_at": "2026-03-15T18:43:00+08:00",
+  "updated_at": "2026-03-16T10:00:00+08:00",
+  "commit_sha": null,
+  "push_status": null,
+  "gate_results": {
+    "board_sweep": "PASS — 6/6 worker tickets REVIEW_READY with close_criteria_met=true",
+    "bundle_consistency": "PASS — worker tickets map to current required bundle sections",
+    "new_section_gate": "PASS — ### New is empty, no unmapped items",
+    "scope_verification": "PASS — all FraudDetect mainline mentions are disclaimers, not execution claims",
+    "worker_tickets_checked": ["TKT-801", "TKT-802", "TKT-803", "TKT-804", "TKT-805", "TKT-899"]
+  },
+  "close_rule_check": {
+    "worker_ticket_missing_bundle": false,
+    "claim_evidence_inconsistency": false,
+    "mainline_execution_claim": false,
+    "new_unmapped_items": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "ticket_id": "TKT-802",
+  "title": "Faithful Reproduction Completion Plan",
+  "type": "reproduction",
+  "priority": "P0",
+  "status": "REVIEW_READY",
+  "claimed_at": "2026-03-15T23:30:00+08:00",
+  "closed_at": "2026-03-15T23:45:00+08:00",
+  "owner": "sisyphus",
+  "round": "r3-gpm-sandbox",
+  "bundle_section": "Faithful Reproduction Completion Plan",
+  "artifacts": [
+    "review/tickets/TKT-802.md",
+    "docs/FAITHFUL_REPRO_COMPLETION_PLAN.md",
+    "review/REVIEW_BUNDLE.md#faithful-reproduction-completion-plan",
+    "repro/results_db/computers_seed0.json",
+    "repro/results_db/computers_seed1.json",
+    "repro/results_db/computers_seed2.json",
+    "repro/results_db/computers_summary.json"
+  ],
+  "close_criteria_met": true,
+  "blocker": {
+    "error": "RuntimeError: CUDA error: an illegal memory access was encountered",
+    "location": "encoder.py:160 _encode_pe()",
+    "cause": "CUDA driver 12.8 / PyTorch cu121 runtime mismatch on transformer attention path",
+    "resolution_options": [
+      "≥24GB GPU with matching CUDA stack",
+      "Downgrade local CUDA driver to 12.1"
+    ]
+  }
+}

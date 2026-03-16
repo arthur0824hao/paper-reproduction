@@ -1,0 +1,24 @@
+{
+  "ticket_id": "TKT-804",
+  "title": "AML Transfer Priority Ranking",
+  "type": "analysis",
+  "priority": "P1",
+  "status": "REVIEW_READY",
+  "claimed_at": "2026-03-15T23:45:00+08:00",
+  "closed_at": "2026-03-15T23:55:00+08:00",
+  "owner": "sisyphus",
+  "round": "r3-gpm-sandbox",
+  "bundle_section": "AML Transfer Priority Ranking",
+  "artifacts": [
+    "review/tickets/TKT-804.md",
+    "review/REVIEW_BUNDLE.md#aml-transfer-priority-ranking"
+  ],
+  "close_criteria_met": true,
+  "decisions": {
+    "random_walk_tokenizer": "KEEP",
+    "anonymous_path_stats": "KEEP",
+    "pattern_frequency_stats": "KEEP_CONDITIONAL",
+    "pattern_attention": "DEFER",
+    "vq_codebook": "DROP"
+  }
+}

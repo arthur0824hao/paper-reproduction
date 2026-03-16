@@ -1,0 +1,25 @@
+{
+  "ticket_id": "TKT-805",
+  "title": "AML Transfer Probe Spec",
+  "type": "transfer",
+  "priority": "P0",
+  "status": "REVIEW_READY",
+  "claimed_at": "2026-03-15T23:55:00+08:00",
+  "closed_at": "2026-03-16T00:05:00+08:00",
+  "owner": "sisyphus",
+  "round": "r3-gpm-sandbox",
+  "bundle_section": "AML Probe Readiness",
+  "artifacts": [
+    "review/tickets/TKT-805.md",
+    "docs/AML_PROBE_SPEC.md",
+    "review/REVIEW_BUNDLE.md#aml-probe-readiness"
+  ],
+  "close_criteria_met": true,
+  "interface_artifacts": [
+    "pattern_freq_features.pt",
+    "pattern_freq_features.csv",
+    "anon_path_features.pt",
+    "anon_path_features.csv",
+    "metadata_manifest.json"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "ticket_id": "TKT-803",
+  "title": "Paper-Facing Mechanism Summary",
+  "type": "analysis",
+  "priority": "P0",
+  "status": "REVIEW_READY",
+  "claimed_at": "2026-03-16T02:08:00+08:00",
+  "closed_at": "2026-03-16T04:30:00+08:00",
+  "owner": "sisyphus",
+  "round": "r3-gpm-sandbox",
+  "bundle_section": "Paper-Facing Mechanism Summary",
+  "artifacts": [
+    "review/tickets/TKT-803.md",
+    "docs/PAPER_REPORT_PACK.md",
+    "review/REVIEW_BUNDLE.md#paper-facing-mechanism-summary",
+    "repro/results_db/ablation_reduced_computers_both_paths.json",
+    "repro/results_db/ablation_reduced_computers_semantic_only.json",
+    "repro/results_db/ablation_reduced_computers_anonymous_only.json",
+    "repro/results_db/ablation_reduced_computers_reduced_patterns.json",
+    "repro/results_db/ablation_reduced_computers_summary.json"
+  ],
+  "close_criteria_met": true,
+  "semantic_contract": "reduced-config exploratory ablation",
+  "variants_completed": 4,
+  "results_summary": {
+    "both_paths": {"test_acc": 90.17, "std": 0.39, "params_M": 0.81},
+    "semantic_only": {"test_acc": 90.10, "std": 0.54, "params_M": 0.74},
+    "anonymous_only": {"test_acc": 90.19, "std": 0.48, "params_M": 0.81},
+    "reduced_patterns": {"test_acc": 90.17, "std": 0.61, "params_M": 0.81}
+  }
+}
