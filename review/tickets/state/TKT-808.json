@@ -1,0 +1,22 @@
+{
+  "ticket_id": "TKT-808",
+  "title": "Self Review Dry Run",
+  "type": "audit",
+  "priority": "P1",
+  "status": "REVIEW_READY",
+  "owner": "sisyphus",
+  "owner_session_id": "sisyphus-ralph-004",
+  "round": "meta-note-bootstrap",
+  "claimed_at": "2026-03-16T10:45:00+08:00",
+  "closed_at": "2026-03-16T10:50:00+08:00",
+  "bundle_section": "Self Review Dry Run",
+  "artifacts": [
+    "review/tickets/TKT-808.md",
+    "note/note_rules.md",
+    "note/note_schema.md",
+    "note/note_feedback.md",
+    "review/REVIEW_BUNDLE.md#self-review-dry-run"
+  ],
+  "close_criteria_met": true,
+  "notes": "Internal review only; intended as a protocol bootstrap sanity check."
+}

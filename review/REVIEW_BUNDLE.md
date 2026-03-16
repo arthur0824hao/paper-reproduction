@@ -13,6 +13,16 @@
 | mechanism summary | component-level reportable insight with explicit caveats | `docs/PAPER_REPORT_PACK.md` | not faithful paper claim |
 | transfer | AML-usable contract and ranking | `docs/AML_PROBE_SPEC.md` | not FraudDetect mainline execution |
 
+## Professor Report Pack
+
+| section | key point | evidence level | primary evidence |
+|---|---|---|---|
+| paper summary | GPM learns from explicit path/pattern representations rather than only message passing | paper-facing interpretation | `docs/PAPER_REPORT_PACK.md` |
+| faithful boundary | faithful reproduction is still blocked on the default transformer runtime | evidence-backed boundary | `docs/FAITHFUL_REPRO_COMPLETION_PLAN.md` |
+| reduced-config mechanism insight | anonymous-only matches both-paths within noise on `computers` | exploratory | `repro/results_db/ablation_reduced_computers_summary.json` |
+| transfer takeaway | anonymous path statistics is the best immediate AML carry-back | evidence-informed proposal | `docs/AML_PROBE_SPEC.md` |
+| caveat section | not a faithful transformer claim and not AML production validation | hard boundary | `docs/PAPER_REPORT_PACK.md` |
+
 ## Faithful Reproduction Completion Plan
 
 | item | current_state | blocker | completion_condition | next_action |
@@ -64,6 +74,7 @@
 
 | ticket_id | title | status |
 |---|---|---|
+| TKT-901 | Professor report pack finalization | REVIEW_READY |
 | TKT-801 | GPM Round Contract Correction | REVIEW_READY |
 | TKT-802 | Faithful Reproduction Completion Plan | REVIEW_READY |
 | TKT-803 | Paper-Facing Mechanism Summary | REVIEW_READY |
@@ -76,6 +87,7 @@
 
 | ticket_id | owner | session_id |
 |---|---|---|
+| TKT-901 | sisyphus | sisyphus-ralph-005 |
 | TKT-802 | sisyphus | sisyphus-ralph-004 |
 | TKT-803 | sisyphus | sisyphus-ralph-004 |
 | TKT-804 | sisyphus | sisyphus-ralph-004 |
@@ -86,7 +98,7 @@
 ## Open / Stale Ticket Check
 
 - `OPEN`: none
-- `UNCLAIMED`: none
+- `UNCLAIMED`: `TKT-902`, `TKT-903`, `TKT-904`, `TKT-000`
 - `STALE_CLAIM`: none
 - existing blocked evidence tickets: `TKT-602`, `TKT-603` remain blocked but are not open/stale
 
@@ -97,6 +109,7 @@
 
 ## Worker Ticket Snapshots
 
+- `TKT-901`: professor-facing pack is now presentation-ready with clear evidence-level boundaries.
 - `TKT-802`: faithful completion plan converted blocker package into an executable decision table.
 - `TKT-803`: professor-facing report pack now uses current reduced-config artifact values and explicit report boundaries.
 - `TKT-804`: AML component ordering is hard-ranked with keep/defer decisions.
@@ -118,8 +131,26 @@
 
 ## Current Round Final State
 
-- all_worker_tickets_ready = yes
+- all_worker_tickets_ready = no
 - all_push_done = yes
-- final_board_clean = yes
+- final_board_clean = no
 - new_inbox_gate_passed = yes
 - repo_scope = GPM sandbox only
+
+## Post-Round Note Bootstrap
+
+| ticket_id | artifact | purpose | verdict |
+|---|---|---|---|
+| TKT-806 | `note/note_rules.md` | codify execution and evidence rules already in use | PASS |
+| TKT-807 | `note/note_schema.md` | codify note, ticket, state, and bundle structure | PASS |
+
+These protocol files are bootstrap guidance derived from current repo practice. They do not replace the active round contract in `note/note_tasks.md`.
+
+## Self Review Dry Run
+
+| ticket_id | review_target | result | boundary |
+|---|---|---|---|
+| TKT-808 | note protocol bootstrap artifacts | PASS | internal self-review, not independent review |
+
+- `note/note_rules.md` and `note/note_schema.md` are consistent with the repository's observed ticket loop.
+- `note/note_feedback.md` records the missing-bootstrap-file issue and the push-state drift that was already corrected.

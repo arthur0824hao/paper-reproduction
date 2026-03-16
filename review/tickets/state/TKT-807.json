@@ -1,0 +1,20 @@
+{
+  "ticket_id": "TKT-807",
+  "title": "Note Schema Bootstrap",
+  "type": "governance",
+  "priority": "P1",
+  "status": "REVIEW_READY",
+  "owner": "sisyphus",
+  "owner_session_id": "sisyphus-ralph-004",
+  "round": "meta-note-bootstrap",
+  "claimed_at": "2026-03-16T10:40:00+08:00",
+  "closed_at": "2026-03-16T10:45:00+08:00",
+  "bundle_section": "Post-Round Note Bootstrap",
+  "artifacts": [
+    "review/tickets/TKT-807.md",
+    "note/note_schema.md",
+    "review/REVIEW_BUNDLE.md#post-round-note-bootstrap"
+  ],
+  "close_criteria_met": true,
+  "notes": "Schema is derived from current repo conventions and round note behavior."
+}

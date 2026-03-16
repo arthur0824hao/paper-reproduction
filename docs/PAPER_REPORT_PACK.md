@@ -1,44 +1,63 @@
 # Paper Report Pack
 
-## Reporting Boundary
+## A. Paper One-Paragraph Summary
 
-- Confirmed insight: reduced-config exploratory ablation on `computers` completed successfully.
-- Exploratory only: component interpretation under GRU + hidden_dim=128.
-- Not confirmed: any faithful default-transformer claim.
+GPM treats graph learning as a pattern modeling problem rather than pure neighborhood message passing: it samples path-like graph patterns, encodes semantic and anonymous structural views of those patterns, and aggregates them into node-level predictions. Compared with a standard message-passing GNN, the distinctive move is that GPM explicitly builds reusable pattern tokens and statistics, so the model can reason over recurring structural motifs instead of only repeatedly mixing local neighbor features layer by layer.
 
-## Mechanism Table
+## B. Faithful Reproduction Boundary
 
-| component | evidence | effect | interpretation | can_report? |
+### What we can say now
+
+- The sandbox reproduces the end-to-end data pipeline, pattern cache, training loop, and reduced-config GRU encoder path.
+- Reduced-config ablations on `computers` completed and support mechanism-oriented discussion.
+
+### What we cannot say now
+
+- We cannot claim faithful reproduction of the paper's default transformer path.
+- We cannot claim paper-level benchmark parity or compare current reduced-config numbers as if they were the faithful result.
+
+### Faithful blocker
+
+- All three default-config `computers` runs fail before epoch 1 with `CUDA error: an illegal memory access was encountered` at `model/encoder.py:160`.
+- Current evidence points to a CUDA 12.8 driver versus PyTorch cu121 runtime mismatch on the transformer attention path.
+
+## C. Reduced-Config Mechanism Insight
+
+| component | evidence | effect | interpretation | evidence_level |
 |---|---|---|---|---|
-| both_paths | `ablation_reduced_computers_summary.json` `both_paths`: test `90.17 +- 0.39`, 0.81M params | reference point for reduced-config comparison | combined semantic + anonymous paths are strong, but this is still exploratory-only | yes, with reduced-config qualifier |
-| semantic_only | summary `semantic_only`: test `90.10 +- 0.54`, 0.74M params | about `-0.07` vs both_paths with ~9% fewer params | semantic path alone is nearly sufficient under reduced config | yes, with reduced-config qualifier |
-| anonymous_only | summary `anonymous_only`: test `90.19 +- 0.48`, 0.81M params | about `+0.01` vs both_paths within noise | anonymous structural path alone matches the combined path in this exploratory run | yes, with reduced-config qualifier |
-| reduced_patterns | summary `reduced_patterns`: test `90.17 +- 0.61`, 0.81M params, fewer patterns | essentially flat test accuracy with lower pattern budget in this run | pattern count looks weakly sensitive on `computers` under reduced config; verify on faithful path before generalizing | yes, but frame as tentative |
+| both paths | `90.17 +- 0.39` test, 0.81M params | reduced-config reference point | combined semantic + anonymous paths remain the sandbox baseline | exploratory |
+| semantic only | `90.10 +- 0.54` test, 0.74M params | about `-0.07` vs both paths | semantic path alone is nearly sufficient under reduced config | exploratory |
+| anonymous only | `90.19 +- 0.48` test, 0.81M params | about `+0.01` vs both paths | anonymous structural signal matches combined path within noise | exploratory |
+| reduced patterns | `90.17 +- 0.61` test, 0.81M params with `num_patterns=4` | no visible collapse on `computers` | pattern budget may be compressible for probing, but this is not a faithful claim | exploratory |
 
-## What Can Be Said In A Professor-Facing Report
+### Most AML-worthy component
 
-### Confirmed insight
+- `anonymous path statistics` is the strongest immediate AML candidate because it preserves signal in the reduced-config ablation, is naturally exportable as features, and does not depend on the blocked transformer runtime.
 
-- The GPM mechanism is operational in sandbox form when the pattern encoder is switched to GRU.
-- On `computers`, anonymous-path-only performance matches both-path performance within noise under reduced config.
-- This makes anonymous structural signatures the most promising AML-transfer target because they preserve signal while avoiding the currently blocked transformer path.
+## D. Transfer Takeaway
 
-### Exploratory-only insight
+- First carry back `anonymous path statistics`: lowest integration effort, clearest structural novelty, and strongest current signal.
+- Second carry back `random-walk tokenizer`: it is the enabling layer for path-derived features and a practical bridge to directed AML transaction graphs.
+- Consider `pattern frequency statistics` only after a novelty gate confirms they add information beyond the existing AML feature bank.
 
-- Semantic-only is close to both-paths, so the semantic branch is not obviously dispensable or dominant.
-- Lower pattern count does not collapse performance on `computers`, which suggests a smaller probe budget may be acceptable for AML prototyping.
+## E. Caveat Section
 
-### Not reportable as faithful claim
+- Reduced-config results are exploratory only.
+- This is not a faithful transformer claim.
+- This is not AML production validation.
 
-- Do not claim the default transformer mechanism has been reproduced.
-- Do not compare reduced-config numbers directly to the paper's faithful benchmark table.
+## Evidence Level Guide
 
-## AML Relevance Callout
-
-The component most worth immediate AML attention is `anonymous path statistics`: it is structurally novel, transferable as features, and already looks competitive in the reduced-config ablation without needing the blocked transformer runtime.
+| claim type | current level | usable for professor report? |
+|---|---|---|
+| reduced-config mechanism comparison | evidence-backed exploratory result | yes |
+| faithful default-transformer reproduction | blocked / unverified | no |
+| AML transfer implementation direction | evidence-informed proposal | yes, as proposal |
+| AML production impact | untested | no |
 
 ## Evidence Paths
 
 - Reduced ablation summary: `repro/results_db/ablation_reduced_computers_summary.json`
 - Reduced ablation ticket: `review/tickets/TKT-803.md`
 - Faithful blocker plan: `docs/FAITHFUL_REPRO_COMPLETION_PLAN.md`
+- Transfer probe contract: `docs/AML_PROBE_SPEC.md`
