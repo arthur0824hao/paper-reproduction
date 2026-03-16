@@ -1,0 +1,31 @@
+{
+  "threshold": 0.7,
+  "pattern_feature_count": 12,
+  "baseline_feature_count": 767,
+  "max_correlations": [
+    0.21627008399315006,
+    0.22226328234696185,
+    0.3012760861848984,
+    0.3418271380906702,
+    0.2801588300447659,
+    0.17046443069768144,
+    0.13453653543183272,
+    0.11774014933576936,
+    0.09343436658460794,
+    0.09150139835600087,
+    0.19239762385018108,
+    0.19239762385018108
+  ],
+  "novel_features_count": 12,
+  "gate_passed": true,
+  "verdict": "PROCEED \u2014 sufficient novel features",
+  "validation_tier": "Tier 3",
+  "input_data": "Computers proxy graph slice (512 nodes)",
+  "chosen_component": "anonymous path statistics",
+  "artifact_files": [
+    "transfer/outputs/computers_proxy_anon_path_features.pt",
+    "transfer/outputs/computers_proxy_anon_path_features.csv",
+    "transfer/outputs/computers_proxy_anon_path_features_metadata_manifest.json"
+  ],
+  "verdict_label": "positive signal"
+}

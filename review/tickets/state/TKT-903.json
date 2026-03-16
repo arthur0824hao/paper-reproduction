@@ -1,0 +1,27 @@
+{
+  "ticket_id": "TKT-903",
+  "title": "Simple validation of one transfer component",
+  "type": "transfer",
+  "priority": "P0",
+  "status": "REVIEW_READY",
+  "owner": "sisyphus",
+  "owner_session_id": "sisyphus-ralph-005",
+  "round": "gpm-sandbox-v3",
+  "claimed_at": "2026-03-16T11:30:00+08:00",
+  "request_source": "review/REQUEST_BUNDLE.md#tkt-903--simple-validation-of-one-transfer-component",
+  "bundle_section": "Simple Transfer Validation",
+  "closed_at": "2026-03-16T11:45:00+08:00",
+  "artifacts": [
+    "review/tickets/TKT-903.md",
+    "transfer/feature_extraction/extract_anon_path_features.py",
+    "transfer/outputs/computers_proxy_anon_path_features.pt",
+    "transfer/outputs/computers_proxy_anon_path_features.csv",
+    "transfer/outputs/computers_proxy_anon_path_features_metadata_manifest.json",
+    "transfer/outputs/computers_proxy_anon_validation_report.json",
+    "review/REVIEW_BUNDLE.md#simple-transfer-validation"
+  ],
+  "close_criteria_met": true,
+  "validation_tier": "Tier 3",
+  "verdict": "positive signal",
+  "notes": "Tier-3 novelty validation passed on a 512-node Computers proxy slice because no higher-tier AML/FraudDetect graph artifact was available in the sandbox."
+}
